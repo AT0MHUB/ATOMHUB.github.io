@@ -1,56 +1,54 @@
-/* Fondo degradado oscuro con tonos morados */
+/* Fondo degradado claro con tonos azules y verdes */
 body {
-    background: #111;
+    background: linear-gradient(120deg, #f8fafc 0%, #e3e8ee 100%);
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff;
+    color: #222f3e;
 }
 
-/* Header con efecto neón */
+/* Header limpio */
 header {
-    animation: fadeInDown 1s ease;
     text-align: center;
     padding: 40px 0 20px 0;
-    background: rgba(24, 18, 43, 0.85);
+    background: rgba(255,255,255,0.95);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    box-shadow: 0 4px 24px #7b2ff255;
+    box-shadow: 0 4px 16px #e3e8ee;
 }
 
-/* Títulos con efecto neón */
+/* Títulos elegantes */
 h1 {
     font-size: 2.5em;
-    color: #fff;
-    text-shadow: 0 0 8px #7b2ff2, 0 0 16px #f357a8;
+    color: #2e86de;
+    text-shadow: none;
     margin-bottom: 0.2em;
 }
 
 h2 {
-    color: #f357a8;
+    color: #00b894;
     margin-top: 30px;
     margin-bottom: 10px;
-    text-shadow: 0 0 6px #7b2ff2, 0 0 12px #f357a8;
-    border-left: 6px solid #7b2ff2;
+    border-left: 6px solid #2e86de;
     padding-left: 12px;
-    background: rgba(34, 34, 50, 0.7);
+    background: #f8fafc;
     border-radius: 8px;
     display: inline-block;
+    text-shadow: none;
 }
 
-/* Secciones con fondo oscuro y borde neón */
+/* Secciones claras */
 section {
-    background: rgba(34, 34, 50, 0.92);
+    background: #fff;
     margin: 30px auto;
     padding: 30px 20px;
     border-radius: 20px;
     max-width: 700px;
-    box-shadow: 0 2px 24px #7b2ff255;
-    animation: fadeInUp 1s;
-    border: 1.5px solid #7b2ff2;
+    box-shadow: 0 2px 12px #e3e8ee;
+    border: 1.5px solid #e3e8ee;
 }
 
-/* Menú de navegación neón */
+/* Menú de navegación elegante */
 nav ul {
     list-style: none;
     padding: 0;
@@ -61,57 +59,86 @@ nav ul {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #2e86de;
     font-weight: bold;
     text-decoration: none;
     padding: 8px 18px;
     border-radius: 20px;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 0 8px #7b2ff2;
 }
 
 nav ul li a:hover {
-    background: linear-gradient(90deg, #f357a8 40%, #7b2ff2 100%);
-    color: #fff;
-    box-shadow: 0 2px 16px #f357a8cc, 0 0 16px #7b2ff2cc;
+    background: #e3e8ee;
+    color: #00b894;
+    box-shadow: 0 2px 12px #b2bec355;
 }
 
-/* Enlaces de redes sociales con efecto neón */
-#contacto div {
+/* Redes sociales */
+.social-logos {
     display: flex;
     gap: 18px;
     margin-top: 10px;
-    justify-content: flex-start;
+    align-items: center;
 }
 
-#contacto a img {
+.logo-link {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.logo-link img {
     width: 44px;
     height: 44px;
     padding: 8px;
     border-radius: 50%;
-    background: #18122B;
-    box-shadow: 0 0 12px #7b2ff2, 0 0 24px #f357a8;
-    border: 2px solid #7b2ff2;
+    background: #f8fafc;
+    box-shadow: 0 0 8px #e3e8ee;
+    border: 2px solid #e3e8ee;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     display: block;
 }
 
-#contacto a img:hover {
-    transform: scale(1.18) rotate(-8deg);
-    box-shadow: 0 0 32px #f357a8, 0 0 48px #7b2ff2;
-    border-color: #f357a8;
-    background: #2d1b4c;
+.logo-link:hover img {
+    transform: scale(1.12) rotate(-6deg);
+    box-shadow: 0 0 24px #2e86de33;
+    border-color: #00b894;
+    background: #e3e8ee;
+}
+
+.logo-text {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    margin-top: 6px;
+    color: #2e86de;
+    font-size: 0.95em;
+    letter-spacing: 1px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    background: #fff;
+    padding: 2px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    box-shadow: 0 0 8px #e3e8ee;
+}
+
+.logo-link:hover .logo-text {
+    opacity: 1;
 }
 
 /* Pie de página */
 footer {
     text-align: center;
     padding: 20px 0;
-    color: #fff;
+    color: #888;
     background: transparent;
     font-size: 1em;
     letter-spacing: 1px;
-    text-shadow: 0 0 8px #7b2ff2;
+    text-shadow: none;
+    border-top: 1px solid #e3e8ee;
 }
 
 /* Canvas de partículas */
@@ -124,19 +151,8 @@ footer {
     z-index: 0;
     pointer-events: none;
 }
-
 body, header, section, footer {
     position: relative;
     z-index: 1;
-}
-
-/* Animaciones */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-40px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px);}
-    to { opacity: 1; transform: translateY(0);}
 }
 
