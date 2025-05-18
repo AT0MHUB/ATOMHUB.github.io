@@ -1,6 +1,6 @@
 /* Fondo degradado oscuro con tonos morados */
 body {
-    background: linear-gradient(120deg, #18122B 0%, #44318D 100%);
+    background: #111;
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
