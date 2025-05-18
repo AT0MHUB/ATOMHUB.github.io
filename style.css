@@ -77,18 +77,28 @@ nav ul li a:hover {
 }
 
 /* Enlaces de redes sociales con efecto neón */
+#contacto div {
+    display: flex;
+    gap: 18px;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
 #contacto a img {
-    transition: transform 0.2s, box-shadow 0.2s;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
     border-radius: 50%;
     background: #18122B;
     box-shadow: 0 0 12px #7b2ff2, 0 0 24px #f357a8;
     border: 2px solid #7b2ff2;
-    margin-right: 10px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: block;
 }
 
 #contacto a img:hover {
-    transform: scale(1.15) rotate(-8deg);
-    box-shadow: 0 0 24px #f357a8, 0 0 32px #7b2ff2;
+    transform: scale(1.18) rotate(-8deg);
+    box-shadow: 0 0 32px #f357a8, 0 0 48px #7b2ff2;
     border-color: #f357a8;
     background: #2d1b4c;
 }
