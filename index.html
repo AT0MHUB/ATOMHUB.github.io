@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="particles-bg"></canvas>
     <header>
         <img src="perfil.jpg" alt="Foto de Alexander Muñoz" style="width:100px; border-radius:50%; box-shadow:0 0 10px #333;">
         <h1 style="color:#2e86de; text-shadow: 2px 2px 8px #b2bec3;">Alexander Muñoz</h1>
@@ -65,5 +66,81 @@
     <footer>
         <p>&copy; 2025 Alexander Muñoz | Todos los derechos reservados.</p>
     </footer>
+    <script>
+    // Partículas animadas tipo tráfico de datos
+    const canvas = document.getElementById('particles-bg');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function createParticles() {
+        particles = [];
+        for (let i = 0; i < 60; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: 0.5 + Math.random() * 1.2,
+                vy: (Math.random() - 0.5) * 0.5,
+                radius: 1.5 + Math.random() * 1.5,
+                color: Math.random() > 0.5 ? '#2e86de' : '#00b894'
+            });
+        }
+    }
+    createParticles();
+    window.addEventListener('resize', createParticles);
+
+    function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Dibujar líneas entre partículas cercanas
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 90) {
+                    ctx.strokeStyle = '#b2bec355';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+        // Dibujar partículas
+        for (let p of particles) {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = p.color;
+            ctx.shadowColor = p.color;
+            ctx.shadowBlur = 8;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+    }
+
+    function updateParticles() {
+        for (let p of particles) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.y > canvas.height) p.y = 0;
+            if (p.y < 0) p.y = canvas.height;
+        }
+    }
+
+    function animate() {
+        drawParticles();
+        updateParticles();
+        requestAnimationFrame(animate);
+    }
+    animate();
+    </script>
 </body>
 </html>
