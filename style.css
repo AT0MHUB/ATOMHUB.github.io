@@ -1,1 +1,127 @@
+/* Fondo degradado para toda la página */
+body {
+    background: linear-gradient(120deg, #2e86de 0%, #00b894 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animación de entrada para el header */
+header {
+    animation: fadeInDown 1s ease;
+    text-align: center;
+    padding: 40px 0 20px 0;
+    background: rgba(255,255,255,0.85);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 4px 16px rgba(46,134,222,0.15);
+}
+
+/* Menú de navegación colorido */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #2e86de;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(90deg, #00b894 40%, #2e86de 100%);
+    color: #fff;
+    box-shadow: 0 2px 12px #2e86de55;
+}
+
+/* Títulos llamativos */
+h1, h2 {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #2e86de;
+    text-shadow: 2px 2px 8px #00b89499;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    color: #00b894;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px #2e86de55;
+    border-left: 6px solid #2e86de;
+    padding-left: 12px;
+    background: linear-gradient(90deg, #eaf6ff 80%, #b2bec3 100%);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Secciones */
+section {
+    background: rgba(255,255,255,0.92);
+    margin: 30px auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    max-width: 700px;
+    box-shadow: 0 2px 12px rgba(46,134,222,0.10);
+    animation: fadeInUp 1s;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Botones y enlaces destacados */
+a, button {
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+a:hover, button:hover {
+    color: #00b894;
+}
+
+/* Enlaces de redes sociales con efecto hover */
+#contacto a img {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(46,134,222,0.10);
+    border: 2px solid #2e86de;
+    margin-right: 10px;
+}
+
+#contacto a img:hover {
+    transform: scale(1.15) rotate(-8deg);
+    box-shadow: 0 4px 16px #00b89455;
+    background: #eaf6ff;
+    border-color: #00b894;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    background: transparent;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 6px #2e86de;
+}
 
