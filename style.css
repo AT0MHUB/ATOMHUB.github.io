@@ -215,3 +215,9 @@ body, header, section, footer {
     pointer-events: none;
 }
 
+/* Estilo para la imagen de perfil */
+.profile-picture {
+    width: 150px;
+    border-radius: 50%;
+}
+
