@@ -156,3 +156,62 @@ body, header, section, footer {
     z-index: 1;
 }
 
+/* Ajustes responsivos para móviles */
+@media (max-width: 600px) {
+    header {
+        padding: 24px 0 10px 0;
+        border-radius: 0 0 18px 18px;
+    }
+    header img {
+        width: 70px !important;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.1em;
+        padding-left: 8px;
+    }
+    section {
+        padding: 18px 6px;
+        margin: 16px 4px;
+        border-radius: 12px;
+        max-width: 98vw;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+        margin: 10px 0 0 0;
+    }
+    .social-logos {
+        gap: 10px;
+    }
+    .logo-link img {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+    .logo-text {
+        font-size: 0.85em;
+        margin-top: 2px;
+        padding: 2px 6px;
+    }
+    footer {
+        font-size: 0.9em;
+        padding: 12px 0;
+    }
+}
+
+/* Asegura que el canvas cubra todo el fondo en móviles */
+#particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
