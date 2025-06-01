@@ -221,7 +221,7 @@ body, header, section, footer {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 60% 50%; /*Ajusta el segundo valor vertical */
+    object-position: 60% 50%; /*Ajusta el segundo valor vertical (derecha) horizontal (izquierda) */
     box-shadow: 0 4px 16px #b2bec3;
     display: block;
     margin: 24px auto 12px auto;
